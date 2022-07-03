@@ -1,6 +1,7 @@
 import tkinter as tk
+from helpfunct import paint, add_image, get_info, add_filter, show_gallery
 def main():
-
+    
     # some constants
     ROOTSIZE = [600,600]
     FRAMESIZE = [400,400]
@@ -8,7 +9,7 @@ def main():
     # create root window and determine it's size and name
     root = tk.Tk()
     root.geometry("x".join(str(size) for size in ROOTSIZE))
-    root.resizable(False,False)
+    root.resizable(False, False)
     root.title("Pythoshop")
     
     # create and place frame for buttons
@@ -30,7 +31,7 @@ def main():
             buttFrame,
             text="What to do",
             bd=5,
-            command=get_info
+            command=lambda: [root.destroy(), get_info(main)]
     )
     
     # show gallery
@@ -65,21 +66,6 @@ def main():
     addBut.pack(expand=True, fill="x", side="top")
     
     root.mainloop()
-
-def paint():
-    pass
-
-def add_image():
-    pass
-
-def get_info():
-    pass
-
-def add_filter():
-    pass
-
-def show_gallery():
-    pass
 
 if __name__ == "__main__":
     main()
