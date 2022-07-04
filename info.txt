@@ -1,0 +1,4 @@
+add|You can add images to your local directory by selecting them in the file exlorer
+gallery|You can see all images which are exist in your local directory
+paint|You can paint pictures and save them in your local directory
+filter|You can use filter on image and save it in your local directory

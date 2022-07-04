@@ -8,7 +8,7 @@ def paint():
 def add_image():
     pass
 
-# open window with instructions what to do
+# open window with buttons to explain what user can do in the app
 def get_info(main):
 
     # define window and frame sizes
@@ -70,8 +70,38 @@ def get_info(main):
 
     window.mainloop()
 
-def info(key):
-    pass
+# create window with precise information how to use app function
+def info(keyInfo):
+    
+    # create window
+    window = tk.Tk()
+    window.title(keyInfo)
+
+    # read information from the file
+    with open("info.txt", "r") as file:
+        tmp = file.read().split("\n")
+    
+    # transform array into dictionary
+    info = {}
+    for x in tmp:
+        tmpInfo = x.split("|")
+        if len(tmpInfo) == 2:
+            key, information = tmpInfo
+            info[key] = information
+    
+    # create and pack Label for text information
+    label = tk.Label(
+            window,
+            text=info[keyInfo],
+            font=("Arial", 16),
+            justify="center",
+            wraplength=200
+    )
+    label.pack()
+
+    # phohibit user to change window size
+    window.resizable(False, False)
+    window.mainloop()
 
 def add_filter():
     pass

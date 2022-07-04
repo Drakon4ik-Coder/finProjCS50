@@ -58,13 +58,22 @@ def main():
             command=add_image
     )
 
+    # exit from the app
+    exitBut = tk.Button(
+            buttFrame,
+            text="Exit from the app",
+            bd=5,
+            command=lambda: root.destroy()
+    )
+
     # pack all buttons
     infoBut.pack(expand=True, fill="x", side="top")
     paintBut.pack(expand=True, fill="x", side="top") 
     gallerBut.pack(expand=True, fill="x", side="top")
     filterBut.pack(expand=True, fill="x", side="top")
     addBut.pack(expand=True, fill="x", side="top")
-    
+    exitBut.pack(expand=True, fill="x", side="top")
+
     root.mainloop()
 
 if __name__ == "__main__":
